@@ -1,16 +1,17 @@
 # my_app_project
 
 ຂັ້ນຕອນການ Clone Project!
-
-
-## Getting Started
-
 #Step1: Clone Project 
 #Step2: Open project on VS Code
 #Step3: Open terminal
 #Step4: flutter pub get  in terminal for install packages
 #Step5: run project you can use flutter run in terminal or run debuging in menubar 
 #ຂັ້ນຕອນງ່າຍໆ😄
+
+## Getting Started
+
+
+
 
 This project is a starting point for a Flutter application.
 
