@@ -127,6 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //BottomNav(),
       //BottomBar(),
      // MyBottomBar()
+     // CustomNavigationBar()
       ]
       ),
       
@@ -161,9 +162,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(context,MaterialPageRoute(builder: (_) => MenuScreen()),);
                 },
                 icon: const Icon(
-                  Icons.dining,
+                  Icons.restaurant_menu,
                 ),
-              ),
+              ), 
       
               IconButton(
                 onPressed: () {

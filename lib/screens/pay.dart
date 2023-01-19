@@ -97,18 +97,19 @@ class _PayState extends State<Pay> with TickerProviderStateMixin {
                             QuickAlert.show(
                               widget: Column(
                                 children: [
-                                  Lottie.network('https://assets2.lottiefiles.com/packages/lf20_iux6ajkg.json',),
+                                  //Lottie.network('https://assets2.lottiefiles.com/packages/lf20_iux6ajkg.json',),
                                   Center(
-                                    child: Text('ຂອບໃຈທີ່ໃຊ້ບໍລິການ',style: TextStyle(fontSize: 24),),
+                                    child: Text('ຂອບໃຈທີ່ໃຊ້ບໍລິການ',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: Color(0xff284F5B)),),
                                   )
                                 ],
                               ),
                                 context: context,
                                 type: QuickAlertType.success,
-                                text: 'ໂອນເງິນສຳເລັດ',
+                                //text: 'ໂອນເງິນສຳເລັດ',
                                 borderRadius: 20,
                                 animType: QuickAlertAnimType.slideInUp,
-                                title: 'ສຳເລັດ',
+                                title: 'ໂອນເງິນສຳເລັດ',
+                                textColor: Color(0xff284F5B),
                                 barrierColor: Colors.green,
                                 barrierDismissible: true,
                                 confirmBtnText: 'ຕົກລົງ',

@@ -249,7 +249,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Text(
                                 'ນ. ພັນມະຫາ ຈັນທະວັນເຮືອງ',
                                 style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
                               ),
@@ -314,7 +314,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      '\t\tແອັບພິເຄຊັນ Want To Eat ຂອງພວກເຮົາສ້າງຂຶ້ນມາເພື່ອເປັນສ່ວນຫນຶ່ງໃນການອຳນວຍຄວາມສະດວກໃຫ້ແກ່ຮ້ານອາຫານ ແລະ ເພື່ອຕອບໂຈດລະບົບຮ້ານອາຫານທີ່ປ່ຽນຈາກການສັ່ງອາຫານແບບທຳມະດາມາໃຊ້ເປັນລະບົບແອັບພິເຄຊັນ.ໃນອະນາຄົດພວກເຮົາອາດມີການພັດທະນາໃຫ້ຄອບຄຸມລະບົບທັງຫມົດຂອງຮ້ານອາຫານ ແລະ ຕໍ່ຍອດໃຫ້ດີຂຶ້ນເລື້ອຍໆ.',
+                      '\t\tແອັບພິເຄຊັນ Want To Eat ຂອງພວກເຮົາສ້າງຂຶ້ນມາເພື່ອເປັນສ່ວນຫນຶ່ງໃນການອຳນວຍຄວາມສະດວກໃຫ້ແກ່ຮ້ານອາຫານ ແລະ ເພື່ອຕອບໂຈດລະບົບຮ້ານອາຫານທີ່ປ່ຽນຈາກການສັ່ງອາຫານແບບທຳມະດາມາໃຊ້ເປັນລະບົບແອັບພິເຄຊັນ.\nໃນອະນາຄົດພວກເຮົາອາດມີການພັດທະນາໃຫ້ຄອບຄຸມລະບົບທັງຫມົດຂອງຮ້ານອາຫານ ແລະ ຕໍ່ຍອດໃຫ້ດີຂຶ້ນເລື້ອຍໆ.',
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Color(0xff284F5B)),
                     ),
                   ),

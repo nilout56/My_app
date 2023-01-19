@@ -21,7 +21,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50),
+              padding: const EdgeInsets.symmetric(vertical: 40),
               child: IconButton(onPressed: (){
                 Navigator.pop(context);
               }, icon: Icon(Icons.arrow_back_ios_new)),
@@ -34,28 +34,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               height: 60,
             ),
           ),
-          Stack(children: [
+          Stack(
+            children: [
             Column(
               children: [
                 Container(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 150,
-                      vertical: 10,
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                            child: Text(
-                          'ໃບບິນ',
-                          style: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff284F5B)),
-                        )),
-                      ],
-                    ),
-                  ),
+                  
                   margin: EdgeInsets.fromLTRB(0, 180, 0, 0),
                   height: 800,
                   width: double.infinity,
@@ -73,12 +57,29 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         topRight: Radius.circular(40),
                         topLeft: Radius.circular(40),
                       ))),
+                      
                 ),
-
+                
                 // CheckoutItem(tasks: tasks)
               ],
             ),
           ]),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 200,horizontal: 150),
+            child: Row(
+              children: [
+                Text(
+                  
+                  'ໃບບິນ',
+                  style: TextStyle(
+                  fontSize: 36,
+
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff284F5B)),
+                ),
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 260, horizontal: 10),
             child: Column(
@@ -99,7 +100,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   width: 400,
                   height: 80,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Row(
                       children: [
                         CircleAvatar(
@@ -128,7 +129,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           ),
                         ),
                         SizedBox(
-                          width: 25,
+                          width: 10,
                         ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -192,7 +193,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   width: 400,
                   height: 80,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Row(
                       children: [
                         CircleAvatar(
@@ -221,7 +222,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           ),
                         ),
                         SizedBox(
-                          width: 25,
+                          width: 10,
                         ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -285,7 +286,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   width: 400,
                   height: 80,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Row(
                       children: [
                         CircleAvatar(
@@ -314,7 +315,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           ),
                         ),
                         SizedBox(
-                          width: 25,
+                          width: 10,
                         ),
                         Row(
                           children: [
@@ -406,7 +407,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        '-------------------------------',
+                        '-------------------------',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       )
