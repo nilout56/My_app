@@ -66,18 +66,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           ]),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 200,horizontal: 150),
-            child: Row(
-              children: [
-                Text(
-                  
-                  'ໃບບິນ',
-                  style: TextStyle(
-                  fontSize: 36,
+            child: Flexible(
 
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff284F5B)),
-                ),
-              ],
+              child: Row(
+                children: [
+                  Text(
+                    'ໃບບິນ',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                    fontSize: 24,
+                  
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff284F5B)),
+                  ),
+                ],
+              ),
             ),
           ),
           Padding(
