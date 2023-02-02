@@ -1,9 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app_project/models/destination.dart';
+import 'package:my_app_project/screens/checkout_screen.dart';
 import 'package:my_app_project/screens/homepage.dart';
+import 'package:my_app_project/screens/menuScreen.dart';
 import 'package:my_app_project/screens/menu_list.dart';
+import 'package:my_app_project/screens/profile.dart';
 
 class Drink extends StatefulWidget {
   const Drink({super.key});
@@ -13,10 +18,12 @@ class Drink extends StatefulWidget {
 }
 
 class _DrinkState extends State<Drink> {
+    bool showBtmAppBr = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10))),
           leading: GestureDetector(
           onTap: (){
               Navigator.pop(context);
@@ -27,10 +34,10 @@ class _DrinkState extends State<Drink> {
         ),
         backgroundColor: Color(0xffF8C141),
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 80),
           child: Text(
             'ເຄື່ອງດື່ມ',
-            style: TextStyle(
+            style: GoogleFonts.notoSansLao(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
                 color: Color(0xff284F5B)),
@@ -65,6 +72,59 @@ class _DrinkState extends State<Drink> {
           
         ),
         
+      ),
+       bottomNavigationBar: AnimatedContainer(
+        
+        child: BottomAppBar(
+          notchMargin: 8.0,
+          shape: const CircularNotchedRectangle(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                
+                onPressed: () {
+                   Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
+                },
+                icon: const Icon(
+                  
+                  Icons.home_outlined,
+                  
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (_) => MenuScreen()),);
+                },
+                icon: const Icon(
+                  Icons.restaurant_menu,
+                ),
+              ), 
+      
+              IconButton(
+                onPressed: () {
+                   Navigator.push(context,MaterialPageRoute(builder: (_) => CheckoutScreen()),);
+                },
+                icon: const Icon(
+                  CupertinoIcons.cart,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                   Navigator.push(context,MaterialPageRoute(builder: (_) => ProfileScreen()),);
+                },
+                icon: const Icon(
+                  CupertinoIcons.person_crop_circle,
+                ),
+              ),
+            ],
+          ),
+        ),
+        duration: const Duration(
+          milliseconds: 800,
+        ),
+        curve: Curves.easeInOutSine,
+        height: showBtmAppBr ? 70 : 0,
       ),
     );
   }
@@ -172,7 +232,7 @@ class _GridEState extends State<GridE> {
                               children: [
                                 Text(
                                   menuItems[index]['name'],
-                                  style: TextStyle(
+                                  style: GoogleFonts.notoSansLao(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -187,7 +247,7 @@ class _GridEState extends State<GridE> {
                               children: [
                                 Text(
                                   menuItems[index]['price'],
-                                  style: TextStyle(
+                                  style: GoogleFonts.notoSansLao(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold),
                                 ),

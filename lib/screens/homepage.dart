@@ -14,7 +14,7 @@ import 'package:my_app_project/screens/menuScreen.dart';
 import 'package:my_app_project/screens/menu_list.dart';
 import 'package:my_app_project/screens/profile.dart';
 import 'package:velocity_x/velocity_x.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -26,10 +26,11 @@ class _HomeScreenState extends State<HomeScreen> {
   
   int currentPage = 0;
   bool showBtmAppBr = true;
-
+  final bool isActive = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Stack
       (children: [
         SafeArea(
@@ -39,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 80,vertical: 0),
                   child: Image.asset(
-                    'assets/images/lo1.png',
+                    'assets/images/Logo1.png',
                     width: 238,
                     height: 60,
                   ),
@@ -78,19 +79,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         }),
                   ),
                 Positioned(
-                top: 150,
+                top: 170,
                 left: 160,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(4, (index) => Container(
                     margin: EdgeInsets.all(2.0),
                     child: Icon(Icons.circle,size: 12,
-                    color: currentPage == index? Colors.indigoAccent:Colors.grey.shade300 ,
+                    color: currentPage == index? Color(0xffF8C141):Colors.grey.shade300 ,
+                    
                     ),
                   ),
                   ),
                 
-                  
                 ),
                 ),
               ]),
@@ -98,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
                     children: [
-                      Text("ອາຫານຍອດນິຍົມ",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                      Text("ອາຫານຍອດນິຍົມ",style: GoogleFonts.notoSansLao(fontSize: 22,fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),
@@ -110,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
                     children: [
-                      Text("ອາຫານປະຈຳລະດູ",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                      Text("ອາຫານປະຈຳລະດູ",style: GoogleFonts.notoSansLao(fontSize: 22,fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),
@@ -131,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ]
       ),
       
-
+    
       // floatingActionButtonLocation: showBtmAppBr
       //     ? FloatingActionButtonLocation.centerDocked
       //     : FloatingActionButtonLocation.centerFloat,
@@ -141,7 +142,10 @@ class _HomeScreenState extends State<HomeScreen> {
       //     Icons.shopping_cart_checkout,
       //   ),
       // ),
+    
+    
       bottomNavigationBar: AnimatedContainer(
+        
         child: BottomAppBar(
           notchMargin: 8.0,
           shape: const CircularNotchedRectangle(),
@@ -149,12 +153,14 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               IconButton(
+                
                 onPressed: () {
                    Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
                 },
                 icon: const Icon(
                   
                   Icons.home_outlined,
+                  
                 ),
               ),
               IconButton(
@@ -242,7 +248,7 @@ class Indicator extends StatelessWidget {
             height: 8.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
-              color: isActive ? Colors.teal : Colors.grey,
+              color: isActive ? Color(0xffF8C141) : Colors.grey,
             ),
           ),
         ),
@@ -305,7 +311,7 @@ class _GridBState extends State<GridB> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
+        physics: ScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -321,13 +327,13 @@ class _GridBState extends State<GridB> {
                         DestinationScreen(destination: destinations[index],),
                   ),
                 ),
-            child: CustomBounceWidget(
-              onPressed: () =>Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        DestinationScreen(destination: destinations[index],),
-                  ),
-                ),
+            // child: CustomBounceWidget(
+            //   onPressed: () =>Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (_) =>
+            //             DestinationScreen(destination: destinations[index],),
+            //       ),
+            //     ),
               child: Container(
               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -361,9 +367,7 @@ class _GridBState extends State<GridB> {
                                 children: [
                                   Text(
                                     menuItems[index]['name'],
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
+                                     style: GoogleFonts.notoSansLao(fontSize: 18,)
                                   ),
                                 ],
                               ),
@@ -376,7 +380,7 @@ class _GridBState extends State<GridB> {
                                 children: [
                                   Text(
                                     menuItems[index]['price'],
-                                    style: TextStyle(
+                                    style: GoogleFonts.notoSansLao(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -390,7 +394,9 @@ class _GridBState extends State<GridB> {
                   ],
                 ),
               ),
-            )));
+            )
+          //  )
+            );
   }
 }
 class GridC extends StatefulWidget {
@@ -447,7 +453,7 @@ class _GridCState extends State<GridC> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
+        physics: ScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -496,9 +502,7 @@ class _GridCState extends State<GridC> {
                               children: [
                                 Text(
                                   menuItems[index]['name'],
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
+                                   style: GoogleFonts.notoSansLao(fontSize: 18,)
                                 ),
                               ],
                             ),
@@ -511,7 +515,7 @@ class _GridCState extends State<GridC> {
                               children: [
                                 Text(
                                   menuItems[index]['price'],
-                                  style: TextStyle(
+                                  style: GoogleFonts.notoSansLao(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold),
                                 ),

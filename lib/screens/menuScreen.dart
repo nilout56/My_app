@@ -1,16 +1,23 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bouncing_widgets/flutter_bouncing_widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_app_project/screens/checkout_screen.dart';
 import 'package:my_app_project/screens/desert.dart';
 import 'package:my_app_project/screens/drink.dart';
 import 'package:my_app_project/screens/food.dart';
+import 'package:my_app_project/screens/homepage.dart';
+import 'package:my_app_project/screens/profile.dart';
+
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    bool showBtmAppBr = true;
     return Scaffold(
       body: Stack(children: [
         Padding(
@@ -20,7 +27,7 @@ class MenuScreen extends StatelessWidget {
           ),
           child: Text(
             "ລາຍການ",
-            style: TextStyle(
+            style: GoogleFonts.notoSansLao(
               fontSize: 26,
               fontWeight: FontWeight.bold,
             ),
@@ -33,13 +40,13 @@ class MenuScreen extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.horizontal(right: Radius.circular(15)),
             color: Color(0xffF8C141),
-             boxShadow: [
-                        BoxShadow(
-                          color: Colors.black26,
-                          offset: Offset(4.0, 4.0),
-                          blurRadius: 20.0,
-                        ),
-                      ],
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                offset: Offset(4.0, 4.0),
+                blurRadius: 20.0,
+              ),
+            ],
           ),
         ),
         SizedBox(
@@ -52,13 +59,16 @@ class MenuScreen extends StatelessWidget {
             ),
             Stack(
               children: [
-              CustomBounceWidget(
-                onPressed: () { 
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => FoodList()),);
-                 },
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  decoration: BoxDecoration(
+                CustomBounceWidget(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => FoodList()),
+                    );
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50),
                         bottomLeft: Radius.circular(50),
@@ -73,37 +83,43 @@ class MenuScreen extends StatelessWidget {
                           blurRadius: 20.0,
                         ),
                       ],
-                      ),
-                  height: 120,
-                ),
-              ),
-              Positioned(
-                left: 10,
-                top: 20,
-                child: ClipOval(
-                  child: Container(
+                    ),
                     height: 120,
-                    width: 120,
-                    color: Colors.teal,
-                    child: Image.asset(
-                      'assets/images/image7.jpeg',
-                      fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned(
+                  left: 10,
+                  top: 20,
+                  child: ClipOval(
+                    child: Container(
+                      height: 120,
+                      width: 120,
+                      color: Colors.teal,
+                      child: Image.asset(
+                        'assets/images/image7.jpeg',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                top: 60,
-                left: 160,
-                                child: Text('ອາຫານ',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),))
-            ],
+                Positioned(
+                    top: 60,
+                    left: 160,
+                    child: Text(
+                      'ອາຫານ',
+                      style: GoogleFonts.notoSansLao(
+                          fontSize: 24, fontWeight: FontWeight.bold),
+                    ))
+              ],
             ),
-            Stack(
-              children: [
+            Stack(children: [
               CustomBounceWidget(
-                onPressed: () { 
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => Drink()),);
-                 },
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => Drink()),
+                  );
+                },
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(
@@ -120,15 +136,18 @@ class MenuScreen extends StatelessWidget {
                           offset: Offset(4.0, 4.0),
                           blurRadius: 20.0,
                         ),
-                      ]
-                      ),
+                      ]),
                   height: 120,
                 ),
               ),
               Positioned(
-                top: 60,
-                left: 160,
-                                child: Text('ເຄຶ່ອງດື່ມ',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),)),
+                  top: 60,
+                  left: 160,
+                  child: Text(
+                    'ເຄຶ່ອງດື່ມ',
+                    style: GoogleFonts.notoSansLao(
+                        fontSize: 24, fontWeight: FontWeight.bold),
+                  )),
               Positioned(
                 left: 10,
                 top: 20,
@@ -147,8 +166,11 @@ class MenuScreen extends StatelessWidget {
             ]),
             Stack(children: [
               CustomBounceWidget(
-                onPressed: () {  
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => Desert()),);
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => Desert()),
+                  );
                 },
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -186,13 +208,77 @@ class MenuScreen extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 60,
-                left: 160,
-                                child: Text('ຂອງຫວານ',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),)),
+                  top: 60,
+                  left: 160,
+                  child: Text(
+                    'ຂອງຫວານ',
+                    style: GoogleFonts.notoSansLao(
+                        fontSize: 24, fontWeight: FontWeight.bold),
+                  )),
             ]),
           ],
         )
       ]),
+      bottomNavigationBar: AnimatedContainer(
+        child: BottomAppBar(
+          notchMargin: 8.0,
+          shape: const CircularNotchedRectangle(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => HomeScreen()),
+                  );
+                },
+                icon: const Icon(
+                  Icons.home_outlined,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => MenuScreen()),
+                  );
+                },
+                icon: const Icon(
+                  Icons.restaurant_menu,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => CheckoutScreen()),
+                  );
+                },
+                icon: const Icon(
+                  CupertinoIcons.cart,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => ProfileScreen()),
+                  );
+                },
+                icon: const Icon(
+                  CupertinoIcons.person_crop_circle,
+                ),
+              ),
+            ],
+          ),
+        ),
+        duration: const Duration(
+          milliseconds: 800,
+        ),
+        curve: Curves.easeInOutSine,
+        height: showBtmAppBr ? 70 : 0,
+      ),
     );
   }
 }

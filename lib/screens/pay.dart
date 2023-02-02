@@ -1,4 +1,5 @@
 //import 'dart:html';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -99,26 +100,36 @@ class _PayState extends State<Pay> with TickerProviderStateMixin {
                                 children: [
                                   //Lottie.network('https://assets2.lottiefiles.com/packages/lf20_iux6ajkg.json',),
                                   Center(
-                                    child: Text('ຂອບໃຈທີ່ໃຊ້ບໍລິການ',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: Color(0xff284F5B)),),
+                                    child: Text(
+                                      'ຂອບໃຈທີ່ໃຊ້ບໍລິການ',
+                                      style: GoogleFonts.notoSansLao(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xff284F5B)),
+                                    ),
                                   )
                                 ],
                               ),
-                                context: context,
-                                type: QuickAlertType.success,
-                                //text: 'ໂອນເງິນສຳເລັດ',
-                                borderRadius: 20,
-                                animType: QuickAlertAnimType.slideInUp,
-                                title: 'ໂອນເງິນສຳເລັດ',
-                                textColor: Color(0xff284F5B),
-                                barrierColor: Colors.green,
-                                barrierDismissible: true,
-                                confirmBtnText: 'ຕົກລົງ',
-                                confirmBtnColor: Colors.green,
-                                autoCloseDuration: Duration(seconds: 5),
-                                onConfirmBtnTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
-                                },
-                                );
+                              context: context,
+                              type: QuickAlertType.success,
+                              //text: 'ໂອນເງິນສຳເລັດ',
+                              borderRadius: 20,
+                              animType: QuickAlertAnimType.slideInUp,
+                              title: 'ໂອນເງິນສຳເລັດ',
+                              textColor: Color(0xff284F5B),
+                              barrierColor: Colors.green,
+                              barrierDismissible: true,
+                              confirmBtnText: 'ຕົກລົງ',
+                              confirmBtnColor: Colors.green,
+                              autoCloseDuration: Duration(seconds: 5),
+                              onConfirmBtnTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HomeScreen(),
+                                    ));
+                              },
+                            );
 
                             _controller.forward();
                           } else {
@@ -126,14 +137,14 @@ class _PayState extends State<Pay> with TickerProviderStateMixin {
                               context: context,
                               type: QuickAlertType.error,
                               title: 'ໂອນເງິນບໍ່ສຳເລັດ',
-                              text: 'ມີບາງຢ່າງຜິດພາດ...',
+                              text: 'ກະລຸນາລອງໃໝ່ອີກຄັ້ງ...',
                               backgroundColor: Colors.white,
                               titleColor: Color(0xff284F5B),
                               textColor: Color(0xff284F5B),
                               barrierColor: Colors.red,
                               confirmBtnColor: Colors.red,
                               confirmBtnText: 'ຕົກລົງ',
-                                autoCloseDuration: Duration(seconds: 5),
+                              autoCloseDuration: Duration(seconds: 5),
                             );
                             success = false;
                             _controller.reverse();
@@ -158,7 +169,7 @@ class _PayState extends State<Pay> with TickerProviderStateMixin {
                                 vertical: 15, horizontal: 60),
                             child: Text(
                               'ສຳເລັດ',
-                              style: TextStyle(
+                              style: GoogleFonts.notoSansLao(
                                   fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                           ),

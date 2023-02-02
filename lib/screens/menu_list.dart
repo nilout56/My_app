@@ -97,14 +97,12 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   ClipPath(
                     clipper: HalfClipper(),
                     child: Container(
-                      height: 500,
+                      height: 400,
                       color: Color(0xffF8C141),
                     ),
                   ),
-                  Positioned(
-                    bottom: 1,
-                    right: 100,
-                    left: 100,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 280,horizontal: 100),
                     child: Container(
                       width: 200,
                       height: 200,
@@ -113,11 +111,9 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       ),
                       child: Hero(
                         tag: widget.destination.imageUrl,
-                        child: ClipOval(
-                          child: Image(
-                            image: AssetImage(widget.destination.imageUrl),
-                            fit: BoxFit.cover,
-                          ),
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage(widget.destination.imageUrl),
+                          radius: 50,
                         ),
                       ),
                     ),
@@ -135,15 +131,9 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         ),
                       )
                     ],
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+                  ),
+                         Padding(
+              padding: const EdgeInsets.symmetric(vertical: 520),
               child: Stack(
                 children: [
                   Container(
@@ -178,7 +168,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                               Text(
                                 widget.destination.type,
                                 style: TextStyle(
-                                    fontSize: 24, fontWeight: FontWeight.bold),
+                                    fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               IconButton(
                                 onPressed: () {
@@ -195,10 +185,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 icon: ClipOval(
                                     child: Container(
                                         color: Color(0xffF8C141),
-                                        child: Icon(
-                                          Icons.remove,
-                                          color: Color(0xff284F5B)
-                                        ))),
+                                        child: Icon(Icons.remove,
+                                            color: Color(0xff284F5B)))),
                               ),
                               Text(menuItems[index]['count'].toString()),
                               IconButton(
@@ -219,10 +207,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 icon: ClipOval(
                                     child: Container(
                                         color: Color(0xffF8C141),
-                                        child: Icon(
-                                          Icons.add,
-                                           color: Color(0xff284F5B)
-                                        ))),
+                                        child: Icon(Icons.add,
+                                            color: Color(0xff284F5B)))),
                               ),
                             ],
                           ),
@@ -230,61 +216,14 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       ],
                     ),
                   ),
-      
-                  // Positioned(
-                  //   bottom: 0,
-                  //   left: 0,
-                  //   child: Column(
-                  //     crossAxisAlignment: CrossAxisAlignment.end,
-                  //     children: [
-                  //       Stack(children: [
-                  // Container(
-                  //   color: Color(0xffAFCBD1),
-                  //   height: 90,
-                  //   width: 410,
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.symmetric(
-                  //       vertical: 20, horizontal: 260),
-                  //   child: Stack(
-                  //     children: [
-                  // CustomBounceWidget(
-                  //   onPressed: () {  },
-                  //   child: Container(
-                  //     width: 100,
-                  //     height: 40,
-                  //     decoration: BoxDecoration(
-                  //         borderRadius: BorderRadius.circular(20),
-                  //         color: Colors.white),
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.symmetric(
-                  //       vertical: 5, horizontal: 35),
-                  //   child: CustomBounceWidget(
-                  //     onPressed: () {
-                  //        setState((){
-                  //         todo.add('Item');
-                  //        });
-                  //      },
-                  //     child: Text(
-                  //       "ຮັບ",
-                  //       style: TextStyle(
-                  //           fontSize: 22,
-                  //           fontWeight: FontWeight.bold),
-                  //     ),
-                  //   ),
-                  // )
-                  //     ],
-                  //   ),
-                  // ),
+
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 40, vertical: 120),
                     child: Text(
                       'ຈຳນວນເງິນ  ${provider.sumAll}  ກີບ',
-                      style: TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ),
                   //       ]),
@@ -294,6 +233,11 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 ],
               ),
             ),
+                ],
+              ),
+            ),
+         
+     
           ],
         ),
       ),
@@ -302,9 +246,18 @@ class _DestinationScreenState extends State<DestinationScreen> {
           padding: const EdgeInsets.all(8.0),
           child: TextButton(
             onPressed: () {
-               Navigator.push(context,MaterialPageRoute(builder: (_) => CheckoutScreen()),);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => CheckoutScreen()),
+              );
             },
-            child: Text('ຮັບ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Color(0xff284F5B)),),
+            child: Text(
+              'ຮັບ',
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff284F5B)),
+            ),
             style: TextButton.styleFrom(
               backgroundColor: Color(0xffAFCBD1),
               minimumSize: Size(double.infinity, 50),

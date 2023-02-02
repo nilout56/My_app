@@ -1,8 +1,13 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_app_project/screens/checkout_screen.dart';
+import 'package:my_app_project/screens/homepage.dart';
+import 'package:my_app_project/screens/menuScreen.dart';
 import 'package:my_app_project/screens/menu_list.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -13,19 +18,18 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+   bool showBtmAppBr = true;
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
               child: Text(
                 'ກ່ຽວກັບພວກເຮົາ',
-                style: TextStyle(
+                style: GoogleFonts.notoSansLao(
                     fontSize: 34,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff284F5B)),
@@ -35,7 +39,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-             
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -69,14 +72,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Text(
                     'ດຣ. ສະຫວາດ ໄຊປະດິດ',
-                    style: TextStyle(
+                    style: GoogleFonts.notoSansLao(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: Color(0xff284F5B)),
                   ),
                   Text(
                     'ອາຈານທີ່ປຶກສາ',
-                    style: TextStyle(
+                    style: GoogleFonts.notoSansLao(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         color: Color(0xff284F5B)),
@@ -120,21 +123,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             children: [
                               Text(
                                 'ທ. ນິລຸດ ເຮືອງແພງສີ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
                               ),
                               Text(
                                 '225N074820',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
                               ),
                               Text(
                                 'Developer',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
@@ -184,21 +187,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             children: [
                               Text(
                                 'ນ. ປານຕາວັນ ໄຊຍະເພັດ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
                               ),
                               Text(
                                 '225N076420',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
                               ),
                               Text(
                                 'UX Designer',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
@@ -248,21 +251,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             children: [
                               Text(
                                 'ນ. ພັນມະຫາ ຈັນທະວັນເຮືອງ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
                               ),
                               Text(
                                 '225Q09720',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
                               ),
                               Text(
                                 'UI Designer',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff284F5B)),
@@ -301,35 +304,100 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ))),
               child: Column(
                 children: [
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      
                       'ຈຸດປະສົງ',
-                      style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold,color: Color(0xff284F5B)),
+                      style: GoogleFonts.notoSansLao(
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff284F5B)),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
                       '\t\tແອັບພິເຄຊັນ Want To Eat ຂອງພວກເຮົາສ້າງຂຶ້ນມາເພື່ອເປັນສ່ວນຫນຶ່ງໃນການອຳນວຍຄວາມສະດວກໃຫ້ແກ່ຮ້ານອາຫານ ແລະ ເພື່ອຕອບໂຈດລະບົບຮ້ານອາຫານທີ່ປ່ຽນຈາກການສັ່ງອາຫານແບບທຳມະດາມາໃຊ້ເປັນລະບົບແອັບພິເຄຊັນ.\nໃນອະນາຄົດພວກເຮົາອາດມີການພັດທະນາໃຫ້ຄອບຄຸມລະບົບທັງຫມົດຂອງຮ້ານອາຫານ ແລະ ຕໍ່ຍອດໃຫ້ດີຂຶ້ນເລື້ອຍໆ.',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Color(0xff284F5B)),
+                      style: GoogleFonts.notoSansLao(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff284F5B)),
                     ),
                   ),
-                  SizedBox(height: 20,),
-                   Text(
-                      
-                      'ຂໍຂອບໃຈ',
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Color(0xff284F5B)),
-                    ),
-
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'ຂໍຂອບໃຈ',
+                    style: GoogleFonts.notoSansLao(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff284F5B)),
+                  ),
                 ],
               ),
             )
           ],
         ),
+      ),
+        bottomNavigationBar: AnimatedContainer(
+        
+        child: BottomAppBar(
+          notchMargin: 8.0,
+          shape: const CircularNotchedRectangle(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                
+                onPressed: () {
+                   Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
+                },
+                icon: const Icon(
+                  
+                  Icons.home_outlined,
+                  
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (_) => MenuScreen()),);
+                },
+                icon: const Icon(
+                  Icons.restaurant_menu,
+                ),
+              ), 
+      
+              IconButton(
+                onPressed: () {
+                   Navigator.push(context,MaterialPageRoute(builder: (_) => CheckoutScreen()),);
+                },
+                icon: const Icon(
+                  CupertinoIcons.cart,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                   Navigator.push(context,MaterialPageRoute(builder: (_) => ProfileScreen()),);
+                },
+                icon: const Icon(
+                  CupertinoIcons.person_crop_circle,
+                ),
+              ),
+            ],
+          ),
+        ),
+        duration: const Duration(
+          milliseconds: 800,
+        ),
+        curve: Curves.easeInOutSine,
+        height: showBtmAppBr ? 70 : 0,
       ),
     );
   }

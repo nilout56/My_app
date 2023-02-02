@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app_project/Provider/state.dart';
 import 'package:my_app_project/screens/pay.dart';
 import 'package:provider/provider.dart';
@@ -27,9 +28,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               }, icon: Icon(Icons.arrow_back_ios_new)),
             ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 80),
             child: Image.asset(
-              'assets/images/lo1.png',
+              'assets/images/Logo1.png',
               width: 238,
               height: 60,
             ),
@@ -40,7 +41,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               children: [
                 Container(
                   
-                  margin: EdgeInsets.fromLTRB(0, 180, 0, 0),
+                  margin: EdgeInsets.fromLTRB(0, 160, 0, 0),
                   height: 800,
                   width: double.infinity,
                   decoration: ShapeDecoration(
@@ -64,29 +65,18 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               ],
             ),
           ]),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 200,horizontal: 150),
-            child: Flexible(
 
-              child: Row(
-                children: [
-                  Text(
-                    'ໃບບິນ',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                    fontSize: 24,
-                  
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff284F5B)),
-                  ),
-                ],
-              ),
-            ),
-          ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 260, horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 180, horizontal: 10),
             child: Column(
               children: [
+                Text("ໃບບິນ", style:GoogleFonts.notoSansLao(
+                      fontSize: 36,
+                    
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff284F5B)),
+                    ),
+                    SizedBox(height: 10,),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -119,12 +109,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             children: [
                               Text(
                                 'ເຂົ້າຜັດກຸ້ງ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '25.000 ກີບ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                   fontSize: 18,
                                 ),
                               ),
@@ -212,12 +202,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             children: [
                               Text(
                                 'ເຂົ້າຜັດກຸ້ງ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '25.000 ກີບ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                   fontSize: 18,
                                 ),
                               ),
@@ -305,12 +295,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             children: [
                               Text(
                                 'ເຂົ້າຜັດກຸ້ງ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '25.000 ກີບ',
-                                style: TextStyle(
+                                style: GoogleFonts.notoSansLao(
                                   fontSize: 18,
                                 ),
                               )
@@ -370,12 +360,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     children: [
                       Text(
                         'ລວມເງິນ',
-                        style: TextStyle(
+                        style: GoogleFonts.notoSansLao(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         '75.000 ກີບ',
-                        style: TextStyle(
+                        style: GoogleFonts.notoSansLao(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       )
                     ],
@@ -388,7 +378,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     children: [
                       Text(
                         'ສ່ວນຫຼຸດ',
-                        style: TextStyle(
+                        style: GoogleFonts.notoSansLao(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       Text(
@@ -424,12 +414,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     children: [
                       Text(
                         'ລວມເງິນທັງໝົດ',
-                        style: TextStyle(
+                        style: GoogleFonts.notoSansLao(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         '75.000 ກີບ',
-                        style: TextStyle(
+                        style: GoogleFonts.notoSansLao(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       )
                     ],
@@ -455,7 +445,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             borderRadius: BorderRadius.circular(140)),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-                              child: Text('ຈ່າຍເງິນສົດ',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                              child: Text('ຈ່າຍເງິນສົດ',style: GoogleFonts.notoSansLao(fontSize: 18,fontWeight: FontWeight.bold),),
                             ),
                       ),
                       GestureDetector(
@@ -477,7 +467,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               borderRadius: BorderRadius.circular(140)),
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-                                child: Text('ຈ່າຍເງິນໂອນ',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                                child: Text('ຈ່າຍເງິນໂອນ',style: GoogleFonts.notoSansLao(fontSize: 18,fontWeight: FontWeight.bold),),
                               ),
                         ),
                       ),

@@ -53,6 +53,9 @@ dependencies:
   quickalert: ^1.0.1
   animated_notch_bottom_bar: ^0.0.6
   flutter_svg: ^1.1.6
+  google_fonts: ^3.0.1
+  splash_view: ^2.0.1
+  icons_launcher: ^2.0.6
 
 dev_dependencies:
   flutter_test:
@@ -96,8 +99,10 @@ flutter:
     - assets/images/image12.jpg
     - assets/images/me5.jpg
     - assets/images/logo.png
+    - assets/images/Logo1.png
     - assets/images/lo1.png
     - assets/images/promote.png
+    - assets/images/indicator.zip
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -125,3 +130,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+icons_launcher:
+  image_path: "assets/images/restaurant.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
