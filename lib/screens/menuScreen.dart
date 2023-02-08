@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bouncing_widgets/flutter_bouncing_widgets.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app_project/screens/checkout_screen.dart';
 import 'package:my_app_project/screens/desert.dart';
@@ -231,35 +232,35 @@ class _MenuScreenState extends State<MenuScreen> {
        bottomNavigationBar: FancyBottomNavigation(
         circleColor: Color(0xffF8C141),
         activeIconColor: Color(0xff284F5B),
-        inactiveIconColor: Color(0xff284F5B),
+        inactiveIconColor:Color(0xff284F5B),
         tabs: [
           TabData(
               iconData: Icons.home,
               title: "ໜ້າຫຼັກ",
-              onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => HomeScreen()))),
+              onclick: () =>Get.to(()=>HomeScreen())),
           TabData(
               iconData: Icons.restaurant_menu,
               title: "ເມນູ",
-              onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => MenuScreen()))),
+              onclick: () =>Get.to(()=>MenuScreen())),
+                  
           TabData(
-              iconData: Icons.shopping_cart,
-              title: "ກະຕ່າ",
-              onclick: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => CheckoutScreen()))),
+            iconData: Icons.shopping_cart, title: "ກະຕ່າ",  
+            onclick: () => Get.to(()=>CheckoutScreen()),
+                  ),
+                
+    
+                  
           TabData(
-              iconData: Icons.person,
-              title: "ໂປຣໄຟລ໌",
-              onclick: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => ProfileScreen()))),
+            iconData: Icons.person, title: "ໂປຣໄຟລ໌", 
+            onclick: () =>Get.to(()=>ProfileScreen())),
+                  
         ],
         initialSelection: 1,
         key: bottomNavigationKey,
         onTabChangedListener: (position) {
-          setState(() {
-            currentPage = position;
-          });
+          // setState(() {
+          //   currentPage = position;
+          // });
         },
       ),
     );

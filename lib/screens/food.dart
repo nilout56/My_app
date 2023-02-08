@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app_project/models/destination.dart';
 import 'package:my_app_project/screens/checkout_screen.dart';
@@ -87,23 +88,19 @@ class _FoodListState extends State<FoodList> {
           TabData(
               iconData: Icons.home,
               title: "ໜ້າຫຼັກ",
-              onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => HomeScreen()))),
+               onclick: () =>Get.to(()=>HomeScreen())),
           TabData(
               iconData: Icons.restaurant_menu,
               title: "ເມນູ",
-              onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => MenuScreen()))),
+             onclick: () =>Get.to(()=>MenuScreen())),
           TabData(
               iconData: Icons.shopping_cart,
               title: "ກະຕ່າ",
-              onclick: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => CheckoutScreen()))),
+              onclick: () =>Get.to(()=>CheckoutScreen())),
           TabData(
               iconData: Icons.person,
               title: "ໂປຣໄຟລ໌",
-              onclick: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => ProfileScreen()))),
+              onclick: () =>Get.to(()=>ProfileScreen())),
         ],
         initialSelection: 1,
         key: bottomNavigationKey,

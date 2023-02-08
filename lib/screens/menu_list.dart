@@ -124,9 +124,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 60, horizontal: 10),
                         child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
+                          onTap: () =>Get.back(),
                           child: Icon(Icons.arrow_back_ios_new),
                         ),
                       )
@@ -245,12 +243,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => CheckoutScreen()),
-              );
-            },
+          onPressed: () =>Get.to(()=>CheckoutScreen()),
             child: Text(
               'ຮັບ',
               style: TextStyle(

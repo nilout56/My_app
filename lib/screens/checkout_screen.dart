@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app_project/Provider/state.dart';
 import 'package:my_app_project/screens/pay.dart';
@@ -449,9 +450,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             ),
                       ),
                       GestureDetector(
-                        onTap: (){
-                          Navigator.push(context,MaterialPageRoute(builder: (_) => Pay()),);
-                        },
+                        onTap: () =>Get.to(()=>Pay()),
                         child: Container(
                           width: 140,
                           height: 50,

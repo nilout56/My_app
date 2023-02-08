@@ -5,6 +5,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bouncing_widgets/custom_bounce_widget.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:my_app_project/Provider/store.dart';
 import 'package:my_app_project/models/data_dnm.dart';
 import 'package:my_app_project/models/destination.dart';
@@ -218,19 +220,18 @@ class _HomeScreenState extends State<HomeScreen> {
           TabData(
               iconData: Icons.restaurant_menu,
               title: "ເມນູ",
-              onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => MenuScreen()
-                  )
-                  )
+               onclick: () =>Get.to(()=>MenuScreen())),
+                  
+          TabData(
+            iconData: Icons.shopping_cart, title: "ກະຕ່າ",  
+            onclick: () =>Get.to(()=>CheckoutScreen())
                   ),
-          TabData(iconData: Icons.shopping_cart, title: "ກະຕ່າ",  onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => CheckoutScreen()
-                  )
-                  )),
-          TabData(iconData: Icons.person, title: "ໂປຣໄຟລ໌", onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => ProfileScreen()
-                  )
-                  )),
+                
+    
+                  
+          TabData(iconData: Icons.person, title: "ໂປຣໄຟລ໌",
+           onclick: () =>Get.to(()=>ProfileScreen())),
+                  
         ],
         initialSelection: 0,
         key: bottomNavigationKey,
