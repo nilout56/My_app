@@ -1,3 +1,4 @@
+import 'package:fancy_bottom_navigation_2/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -18,22 +19,27 @@ class FoodList extends StatefulWidget {
 }
 
 class _FoodListState extends State<FoodList> {
-    bool showBtmAppBr = true;
+   GlobalKey bottomNavigationKey = GlobalKey();
+  
+  int currentPage = 0;
+  bool showBtmAppBr = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10))),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10))),
         leading: GestureDetector(
-          onTap: (){
+          onTap: () {
             Navigator.pop(context);
             //Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
           },
-          child: Icon(Icons.arrow_back_ios,
+          child: Icon(
+            Icons.arrow_back_ios,
           ),
         ),
-        
-        
         backgroundColor: Color(0xffF8C141),
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 80),
@@ -45,7 +51,6 @@ class _FoodListState extends State<FoodList> {
                 color: Color(0xff284F5B)),
           ),
         ),
-        
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -58,7 +63,8 @@ class _FoodListState extends State<FoodList> {
                     borderRadius: BorderRadius.all(Radius.circular(13.0)),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset('assets/images/image9.jpeg',
+                        Image.asset(
+                          'assets/images/f2.png',
                           fit: BoxFit.cover,
                           width: 1500,
                         ),
@@ -66,72 +72,51 @@ class _FoodListState extends State<FoodList> {
                     )),
               ),
             ),
-    
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: GridF(),
             )
           ],
-          
         ),
-        
       ),
-        bottomNavigationBar: AnimatedContainer(
-        
-        child: BottomAppBar(
-          notchMargin: 8.0,
-          shape: const CircularNotchedRectangle(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                
-                onPressed: () {
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
-                },
-                icon: const Icon(
-                  
-                  Icons.home_outlined,
-                  
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (_) => MenuScreen()),);
-                },
-                icon: const Icon(
-                  Icons.restaurant_menu,
-                ),
-              ), 
-      
-              IconButton(
-                onPressed: () {
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => CheckoutScreen()),);
-                },
-                icon: const Icon(
-                  CupertinoIcons.cart,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => ProfileScreen()),);
-                },
-                icon: const Icon(
-                  CupertinoIcons.person_crop_circle,
-                ),
-              ),
-            ],
-          ),
-        ),
-        duration: const Duration(
-          milliseconds: 800,
-        ),
-        curve: Curves.easeInOutSine,
-        height: showBtmAppBr ? 70 : 0,
+      bottomNavigationBar: FancyBottomNavigation(
+        circleColor: Color(0xffF8C141),
+        activeIconColor: Color(0xff284F5B),
+        inactiveIconColor: Color(0xff284F5B),
+        tabs: [
+          TabData(
+              iconData: Icons.home,
+              title: "ໜ້າຫຼັກ",
+              onclick: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => HomeScreen()))),
+          TabData(
+              iconData: Icons.restaurant_menu,
+              title: "ເມນູ",
+              onclick: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => MenuScreen()))),
+          TabData(
+              iconData: Icons.shopping_cart,
+              title: "ກະຕ່າ",
+              onclick: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => CheckoutScreen()))),
+          TabData(
+              iconData: Icons.person,
+              title: "ໂປຣໄຟລ໌",
+              onclick: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ProfileScreen()))),
+        ],
+        initialSelection: 1,
+        key: bottomNavigationKey,
+        onTabChangedListener: (position) {
+          setState(() {
+            currentPage = position;
+          });
+        },
       ),
     );
   }
 }
+
 class GridF extends StatefulWidget {
   const GridF({Key? key}) : super(key: key);
 
@@ -142,35 +127,34 @@ class GridF extends StatefulWidget {
 class _GridFState extends State<GridF> {
   List menuItems = [
     {
-      'name': 'ແກງສົ້ມ',
+      'name': 'ຜັດສະອິວ',
       'image': Image.asset(
-        'assets/images/image12.jpg',
+        'assets/images/Ellipse 8.png',
         fit: BoxFit.cover,
       ),
       //'page': MenuList(destination: destinations,),
-      'price': "40000 \Kip"
+      'price': "20,000 Kip"
     },
     {
-      'name': 'ຕົ້ມຍຳ',
-      'image': Image.asset('assets/images/image7.jpeg', fit: BoxFit.cover),
+      'name': 'ປາລາດພິກ',
+      'image': Image.asset('assets/images/Ellipse 9.png', fit: BoxFit.cover),
       //'page': MenuList(),
-      'price': "40000 \Kip"
+      'price': "20,000 Kip"
     },
     {
-      'name': 'ເຂົ້າຜັດກຸ້ງ',
-      'image': Image.asset('assets/images/image8.jpeg',
-          width: 178, height: 100, fit: BoxFit.cover),
+      'name': 'ຜັດເຜັດກະດູກອ່ອນ',
+      'image': Image.asset('assets/images/Ellipse 10.png', fit: BoxFit.cover),
       //'page': MenuList(),
-      'price': "22000 \Kip"
+      'price': "20,000 Kip"
     },
     {
-      'name': 'ຕຳໝາກຫຸ່ງ',
+      'name': 'ເຂົ້າຊອຍໄກ່',
       'image': Image.asset(
-        'assets/images/image9.jpeg',
+        'assets/images/Ellipse 11.png',
         fit: BoxFit.cover,
       ),
       // 'page': MenuList(),
-      'price': "30000 \Kip"
+      'price': "20,000 Kip"
     },
     {
       'name': 'ມັກແມວ',
@@ -198,32 +182,33 @@ class _GridFState extends State<GridF> {
         itemBuilder: (context, index) => GestureDetector(
             onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) =>
-                        DestinationScreen(destination: destinations[index],),
+                    builder: (_) => DestinationScreen(
+                      destination: destinations[index],
+                    ),
                   ),
                 ),
             child: Container(
-            decoration: BoxDecoration(
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black26,
-                                    offset: Offset(4.0, 4.0),
-                                    blurRadius: 20.0,
-                                  ),
-                                ],
-                                borderRadius: BorderRadius.circular(20),
-                              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    offset: Offset(4.0, 4.0),
+                    blurRadius: 20.0,
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                     borderRadius: BorderRadius.circular(13),
+                      borderRadius: BorderRadius.circular(13),
                       // borderRadius: const BorderRadius.only(
                       //   topLeft: Radius.circular(16.0),
                       //   topRight: Radius.circular(16.0),
-                        
-                      // ),  
+
+                      // ),
                       child: Column(
                         children: [
                           menuItems[index]['image'],
@@ -258,9 +243,7 @@ class _GridFState extends State<GridF> {
                             ),
                           ),
                         ],
-                      )
-                      ),
-                      
+                      )),
                 ],
               ),
             )));

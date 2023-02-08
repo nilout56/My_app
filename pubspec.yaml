@@ -56,6 +56,7 @@ dependencies:
   google_fonts: ^3.0.1
   splash_view: ^2.0.1
   icons_launcher: ^2.0.6
+  fancy_bottom_navigation_2: ^0.3.5
 
 dev_dependencies:
   flutter_test:
@@ -102,6 +103,21 @@ flutter:
     - assets/images/Logo1.png
     - assets/images/lo1.png
     - assets/images/promote.png
+    - assets/images/Ellipse 8.png
+    - assets/images/Ellipse 9.png
+    - assets/images/Ellipse 10.png
+    - assets/images/Ellipse 11-1.png
+    - assets/images/Ellipse 11.png
+    - assets/images/Ellipse 12.png
+    - assets/images/Ellipse 13.png
+    - assets/images/Ellipse 14.png
+    - assets/images/f1.png
+    - assets/images/f2.png
+    - assets/images/wt1.png
+    - assets/images/wt2.png
+    - assets/images/wt3.png
+    - assets/images/wt4.png
+    - assets/images/wt5.png
     - assets/images/indicator.zip
     
 

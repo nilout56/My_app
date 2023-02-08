@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:fancy_bottom_navigation_2/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -18,6 +19,9 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+   GlobalKey bottomNavigationKey = GlobalKey();
+  
+  int currentPage = 0;
    bool showBtmAppBr = true;
   @override
   Widget build(BuildContext context) {
@@ -346,58 +350,44 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ],
         ),
       ),
-        bottomNavigationBar: AnimatedContainer(
-        
-        child: BottomAppBar(
-          notchMargin: 8.0,
-          shape: const CircularNotchedRectangle(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                
-                onPressed: () {
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
-                },
-                icon: const Icon(
-                  
-                  Icons.home_outlined,
-                  
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (_) => MenuScreen()),);
-                },
-                icon: const Icon(
-                  Icons.restaurant_menu,
-                ),
-              ), 
-      
-              IconButton(
-                onPressed: () {
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => CheckoutScreen()),);
-                },
-                icon: const Icon(
-                  CupertinoIcons.cart,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                   Navigator.push(context,MaterialPageRoute(builder: (_) => ProfileScreen()),);
-                },
-                icon: const Icon(
-                  CupertinoIcons.person_crop_circle,
-                ),
-              ),
-            ],
-          ),
-        ),
-        duration: const Duration(
-          milliseconds: 800,
-        ),
-        curve: Curves.easeInOutSine,
-        height: showBtmAppBr ? 70 : 0,
+        bottomNavigationBar: FancyBottomNavigation(
+        circleColor: Color(0xffF8C141),
+        activeIconColor: Color(0xff284F5B),
+        inactiveIconColor:Color(0xff284F5B),
+        tabs: [
+          TabData(
+              iconData: Icons.home,
+
+              title: "ໜ້າຫຼັກ",
+              
+ onclick: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => HomeScreen()
+                  ))),
+              
+          TabData(
+              iconData: Icons.restaurant_menu,
+              title: "ເມນູ",
+              onclick: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => MenuScreen()
+                  )
+                  )
+                  ),
+          TabData(iconData: Icons.shopping_cart, title: "ກະຕ່າ",  onclick: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => CheckoutScreen()
+                  )
+                  )),
+          TabData(iconData: Icons.person, title: "ໂປຣໄຟລ໌", onclick: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => ProfileScreen()
+                  )
+                  )),
+        ],
+        initialSelection: 3,
+        key: bottomNavigationKey,
+        onTabChangedListener: (position) {
+          setState(() {
+            currentPage = position;
+          });
+        },
       ),
     );
   }

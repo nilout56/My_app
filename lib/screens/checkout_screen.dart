@@ -192,7 +192,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         CircleAvatar(
                           radius: 50,
                           backgroundImage: AssetImage(
-                            'assets/images/image8.jpeg',
+                            'assets/images/image12.jpg',
                           ),
                         ),
                         Padding(
@@ -201,12 +201,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'ເຂົ້າຜັດກຸ້ງ',
+                                'ຕົ້ມຍຳກຸ້ງ',
                                 style: GoogleFonts.notoSansLao(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               Text(
-                                '25.000 ກີບ',
+                                '35.000 ກີບ',
                                 style: GoogleFonts.notoSansLao(
                                   fontSize: 18,
                                 ),
@@ -285,7 +285,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         CircleAvatar(
                           radius: 50,
                           backgroundImage: AssetImage(
-                            'assets/images/image8.jpeg',
+                            'assets/images/image9.jpeg',
                           ),
                         ),
                         Padding(
@@ -294,12 +294,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'ເຂົ້າຜັດກຸ້ງ',
+                                'ຕຳໝາກຫຸ່ງ;',
                                 style: GoogleFonts.notoSansLao(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               Text(
-                                '25.000 ກີບ',
+                                '20.000 ກີບ',
                                 style: GoogleFonts.notoSansLao(
                                   fontSize: 18,
                                 ),
@@ -399,14 +399,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        '-------------------------',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      )
+                     
                     ],
                   ),
                 ),
+                      Divider(
+                        color: Colors.black,
+                        height: 2,
+                      ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(

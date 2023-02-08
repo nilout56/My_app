@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_app_project/Provider/state.dart';
 import 'package:my_app_project/Provider/store.dart';
-import 'package:my_app_project/screens/home_screen.dart';
 import 'package:my_app_project/screens/homepage.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -47,10 +46,10 @@ class MyApp extends StatelessWidget {
        showStatusBar: true,
        duration: Duration(seconds: 10),
        title: Text('ຍິນດີຕ້ອນຮັບ',style: GoogleFonts.notoSansLao(fontSize: 34,fontWeight: FontWeight.bold,color: Color(0xff284F5B)),),
-        gradient: LinearGradient(
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
-    colors: <Color>[Color(0xffF8C141), Colors.white]),
+    //     gradient: LinearGradient(
+    // begin: Alignment.topCenter,
+    // end: Alignment.bottomCenter,
+    // colors: <Color>[Color(0xffF8C141), Colors.white]),
   ),
       
         

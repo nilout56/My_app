@@ -4,7 +4,6 @@ import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:my_app_project/screens/home_screen.dart';
 import 'package:my_app_project/screens/homepage.dart';
 import 'package:quickalert/quickalert.dart';
 
