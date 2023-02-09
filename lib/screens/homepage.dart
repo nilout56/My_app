@@ -1,3 +1,4 @@
+import 'package:double_back_to_close/double_back_to_close.dart';
 import 'package:fancy_bottom_navigation_2/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,105 +36,110 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      body: Stack
-      (children: [
-        SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 80,vertical: 0),
-                  child: Image.asset(
-                    'assets/images/Logo1.png',
-                    width: 238,
-                    height: 60,
-                  ),
-                ),
-                Stack(
-                  children: [
-                   Container(
-                    width: double.infinity,
-                    child: CarouselSlider.builder(
-                        options: CarouselOptions(
-                          height: 200,
-                          autoPlay: true,
-                          aspectRatio: 16 / 9,
-                          viewportFraction: 1,
-                          initialPage: 0,
-                          enableInfiniteScroll: true,
-                          reverse: false,
-                          autoPlayInterval: Duration(seconds: 10),
-                          autoPlayAnimationDuration:
-                              Duration(milliseconds: 3000),
-                          autoPlayCurve: Curves.fastOutSlowIn,
-                          enlargeCenterPage: true,
-                          enlargeFactor: 0.5,
-                          onPageChanged: (index, reason) {
-                              currentPage = index;
-                            setState(() {
-                            });
-                          },
-                        ),
-                        itemCount: demoBigImages.length,
-                        itemBuilder: (context, index, realIndex) {
-                          // ((index) => Indicator(
-                          //     isActive: currentPage == index ? true : false));
-                          final demoBigImages = _imageSliders[index];
-                          return demoBigImages;
-                        }),
-                  ),
-                Positioned(
-                top: 170,
-                left: 160,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(4, (index) => Container(
-                    margin: EdgeInsets.all(2.0),
-                    child: Icon(Icons.circle,size: 12,
-                    color: currentPage == index? Color(0xffF8C141):Colors.grey.shade300 ,
-                    
+      body: DoubleBack(
+       // background: Color(0xffF8C141),
+       // textStyle: TextStyle(color: Color(0xff284F5B)),
+        message: "ກົດ back ອີກຄັ້ງເພື່ອອອກຈາກລະບົບ",
+        child: Stack
+        (children: [
+          SafeArea(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 80,vertical: 0),
+                    child: Image.asset(
+                      'assets/images/Logo1.png',
+                      width: 238,
+                      height: 60,
                     ),
                   ),
-                  ),
-                
-                ),
-                ),
-              ]),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
+                  Stack(
                     children: [
-                      Text("ອາຫານຍອດນິຍົມ",style: GoogleFonts.notoSansLao(fontSize: 22,fontWeight: FontWeight.bold)),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: GridB(),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                     Container(
+                      width: double.infinity,
+                      child: CarouselSlider.builder(
+                          options: CarouselOptions(
+                            height: 200,
+                            autoPlay: true,
+                            aspectRatio: 16 / 9,
+                            viewportFraction: 1,
+                            initialPage: 0,
+                            enableInfiniteScroll: true,
+                            reverse: false,
+                            autoPlayInterval: Duration(seconds: 10),
+                            autoPlayAnimationDuration:
+                                Duration(milliseconds: 3000),
+                            autoPlayCurve: Curves.fastOutSlowIn,
+                            enlargeCenterPage: true,
+                            enlargeFactor: 0.5,
+                            onPageChanged: (index, reason) {
+                                currentPage = index;
+                              setState(() {
+                              });
+                            },
+                          ),
+                          itemCount: demoBigImages.length,
+                          itemBuilder: (context, index, realIndex) {
+                            // ((index) => Indicator(
+                            //     isActive: currentPage == index ? true : false));
+                            final demoBigImages = _imageSliders[index];
+                            return demoBigImages;
+                          }),
+                    ),
+                  Positioned(
+                  top: 170,
+                  left: 160,
                   child: Row(
-                    children: [
-                      Text("ອາຫານປະຈຳລະດູ",style: GoogleFonts.notoSansLao(fontSize: 22,fontWeight: FontWeight.bold)),
-                    ],
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(4, (index) => Container(
+                      margin: EdgeInsets.all(2.0),
+                      child: Icon(Icons.circle,size: 12,
+                      color: currentPage == index? Color(0xffF8C141):Colors.grey.shade300 ,
+                      
+                      ),
+                    ),
+                    ),
+                  
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: GridC(),
-                ),
-                
-                
-              ],
+                  ),
+                ]),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(
+                      children: [
+                        Text("ອາຫານຍອດນິຍົມ",style: GoogleFonts.notoSansLao(fontSize: 22,fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: GridB(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(
+                      children: [
+                        Text("ອາຫານປະຈຳລະດູ",style: GoogleFonts.notoSansLao(fontSize: 22,fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: GridC(),
+                  ),
+                  
+                  
+                ],
+              ),
             ),
           ),
+        //BottomNav(),
+        //BottomBar(),
+           // MyBottomBar()
+           // CustomNavigationBar()
+        ]
         ),
-      //BottomNav(),
-      //BottomBar(),
-     // MyBottomBar()
-     // CustomNavigationBar()
-      ]
       ),
       
     

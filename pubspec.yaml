@@ -57,6 +57,7 @@ dependencies:
   splash_view: ^2.0.1
   icons_launcher: ^2.0.6
   fancy_bottom_navigation_2: ^0.3.5
+  double_back_to_close: ^2.0.0
 
 dev_dependencies:
   flutter_test:
