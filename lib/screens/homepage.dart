@@ -513,11 +513,8 @@ class _GridCState extends State<GridC> {
         ),
         itemCount: menuItems.length,
         itemBuilder: (context, index) => GestureDetector(
-            onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        DestinationScreen(destination: destinations[index],),
-                  ),
+           onTap: () =>Get.to(()=>DestinationScreen(destination: destinations[index],),
+                        
                 ),
             child: Container(
             decoration: BoxDecoration(
