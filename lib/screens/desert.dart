@@ -31,10 +31,7 @@ class _DesertState extends State<Desert> {
       appBar: AppBar(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10))),
           leading: GestureDetector(
-          onTap: (){
-            Navigator.pop(context);
-           // Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
-          },
+          onTap: ()=>Get.back(),
           child: Icon(Icons.arrow_back_ios,
           ),
         ),
@@ -176,12 +173,13 @@ class _GridDState extends State<GridD> {
         ),
         itemCount: menuItems.length,
         itemBuilder: (context, index) => GestureDetector(
-            onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        DestinationScreen(destination: destinations[index],),
-                  ),
-                ),
+            onTap: () =>Get.to(()=>DestinationScreen(destination: destinations[index],),),
+            // () => Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (_) =>
+            //             DestinationScreen(destination: destinations[index],),
+            //       ),
+            //     ),
             child: Container(
             decoration: BoxDecoration(
                                 color: Colors.white,

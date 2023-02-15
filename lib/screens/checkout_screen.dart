@@ -24,9 +24,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 40),
-              child: IconButton(onPressed: (){
-                Navigator.pop(context);
-              }, icon: Icon(Icons.arrow_back_ios_new)),
+              child: IconButton(onPressed: ()=>Get.back()
+              , icon: Icon(Icons.arrow_back_ios_new)),
             ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 80),

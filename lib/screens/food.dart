@@ -20,8 +20,8 @@ class FoodList extends StatefulWidget {
 }
 
 class _FoodListState extends State<FoodList> {
-   GlobalKey bottomNavigationKey = GlobalKey();
-  
+  GlobalKey bottomNavigationKey = GlobalKey();
+
   int currentPage = 0;
   bool showBtmAppBr = true;
   @override
@@ -33,10 +33,11 @@ class _FoodListState extends State<FoodList> {
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10))),
         leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-            //Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
-          },
+          onTap: ()=>Get.back(),
+          // () {
+          //   Navigator.pop(context);
+          //   //Navigator.push(context,MaterialPageRoute(builder: (_) => HomeScreen()),);
+         // },
           child: Icon(
             Icons.arrow_back_ios,
           ),
@@ -88,19 +89,19 @@ class _FoodListState extends State<FoodList> {
           TabData(
               iconData: Icons.home,
               title: "ໜ້າຫຼັກ",
-               onclick: () =>Get.to(()=>HomeScreen())),
+              onclick: () => Get.to(() => HomeScreen())),
           TabData(
               iconData: Icons.restaurant_menu,
               title: "ເມນູ",
-             onclick: () =>Get.to(()=>MenuScreen())),
+              onclick: () => Get.to(() => MenuScreen())),
           TabData(
               iconData: Icons.shopping_cart,
               title: "ກະຕ່າ",
-              onclick: () =>Get.to(()=>CheckoutScreen())),
+              onclick: () => Get.to(() => CheckoutScreen())),
           TabData(
               iconData: Icons.person,
               title: "ໂປຣໄຟລ໌",
-              onclick: () =>Get.to(()=>ProfileScreen())),
+              onclick: () => Get.to(() => ProfileScreen())),
         ],
         initialSelection: 1,
         key: bottomNavigationKey,
@@ -177,13 +178,16 @@ class _GridFState extends State<GridF> {
         ),
         itemCount: menuItems.length,
         itemBuilder: (context, index) => GestureDetector(
-            onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => DestinationScreen(
-                      destination: destinations[index],
-                    ),
-                  ),
+            onTap: () => Get.to(() => DestinationScreen(destination: destinations[index]),
                 ),
+
+            //  () => Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (_) => DestinationScreen(
+            //           destination: destinations[index],
+            //         ),
+            //       ),
+            //     ),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,

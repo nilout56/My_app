@@ -1,4 +1,5 @@
 //import 'dart:html';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +44,7 @@ class _PayState extends State<Pay> with TickerProviderStateMixin {
                   padding:
                       const EdgeInsets.symmetric(vertical: 50, horizontal: 0),
                   child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
+                      onPressed:() =>Get.back(),
                       icon: Icon(Icons.arrow_back_ios_new))),
               Column(
                 children: [
@@ -102,8 +101,8 @@ class _PayState extends State<Pay> with TickerProviderStateMixin {
                                     child: Text(
                                       'ຂອບໃຈທີ່ໃຊ້ບໍລິການ',
                                       style: GoogleFonts.notoSansLao(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
                                           color: Color(0xff284F5B)),
                                     ),
                                   )
@@ -121,13 +120,14 @@ class _PayState extends State<Pay> with TickerProviderStateMixin {
                               confirmBtnText: 'ຕົກລົງ',
                               confirmBtnColor: Colors.green,
                               autoCloseDuration: Duration(seconds: 5),
-                              onConfirmBtnTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => HomeScreen(),
-                                    ));
-                              },
+                              onConfirmBtnTap:() =>Get.to(()=>HomeScreen(),)
+                              //  () {
+                              //   Navigator.push(
+                              //       context,
+                              //       MaterialPageRoute(
+                              //         builder: (context) => HomeScreen(),
+                              //       ));
+                              // },
                             );
 
                             _controller.forward();

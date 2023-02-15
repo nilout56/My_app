@@ -371,12 +371,14 @@ class _GridBState extends State<GridB> {
         ),
         itemCount: menuItems.length,
         itemBuilder: (context, index,) => GestureDetector(
-            onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        DestinationScreen(destination: destinations[index],),
-                  ),
-                ),
+            onTap: () => Get.to(()=>DestinationScreen(destination: destinations[index],),),
+            // () => 
+            // Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (_) =>
+            //             DestinationScreen(destination: destinations[index],),
+            //       ),
+            //     ),
             // child: CustomBounceWidget(
             //   onPressed: () =>Navigator.of(context).push(
             //       MaterialPageRoute(

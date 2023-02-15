@@ -70,12 +70,13 @@ class _MenuScreenState extends State<MenuScreen> {
             Stack(
               children: [
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => FoodList()),
-                    );
-                  },
+                  onTap:() => Get.to(()=>FoodList()),
+                  //  () {
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(builder: (_) => FoodList()),
+                  //   );
+                  // },
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     decoration: BoxDecoration(
@@ -124,12 +125,15 @@ class _MenuScreenState extends State<MenuScreen> {
             ),
             Stack(children: [
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => Drink()),
-                  );
-                },
+                onTap: () => Get.to(()=>Drink()),
+                // () {
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute
+                    
+                //     (builder: (_) => Drink()),
+                //   );
+                // },
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(
@@ -176,12 +180,13 @@ class _MenuScreenState extends State<MenuScreen> {
             ]),
             Stack(children: [
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => Desert()),
-                  );
-                },
+                onTap: () => Get.to(()=>Desert()),
+                // () {
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(builder: (_) => Desert()),
+                //   );
+                // },
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(

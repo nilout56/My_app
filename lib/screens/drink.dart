@@ -175,7 +175,8 @@ class _GridEState extends State<GridE> {
         ),
         itemCount: menuItems.length,
         itemBuilder: (context, index) => GestureDetector(
-            onTap: () => Navigator.of(context).push(
+            onTap: 
+            () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) =>
                         DestinationScreen(destination: destinations[index],),
